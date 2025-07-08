@@ -6,6 +6,7 @@ import { store } from './app/store'
 import Register from './features/auth/Register'
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import VerifyOtp from './features/auth/VerifyOtp'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +17,7 @@ function App() {
       <Router>
         <Routes>
             <Route path="/register" element={<Register />} />
+            <Route path="/verify-otp" element={<VerifyOtp />} />
         </Routes>
       </Router>
     </Provider>
