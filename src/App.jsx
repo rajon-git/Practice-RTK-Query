@@ -7,9 +7,11 @@ import Register from './features/auth/Register'
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import VerifyOtp from './features/auth/VerifyOtp'
+import Login from './features/auth/Login'
+import ProtectedRoute from './components/ProtectedRoute'
+import Homepage from './components/Home'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -18,6 +20,11 @@ function App() {
         <Routes>
             <Route path="/register" element={<Register />} />
             <Route path="/verify-otp" element={<VerifyOtp />} />
+            <Route path="/login" element={<Login />} />
+
+             <Route element={<ProtectedRoute />}>
+               <Route path="/" element={<Homepage />} />
+            </Route>
         </Routes>
       </Router>
     </Provider>

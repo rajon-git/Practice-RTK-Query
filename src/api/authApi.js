@@ -55,6 +55,8 @@ export const authApi = createApi({
         body: { refresh: refreshToken },
       }),
     }),
+    
+
   }),
 });
 
@@ -64,5 +66,5 @@ export const {
   useVerifyOtpMutation,
   useResendOtpMutation,
   useActivateAccountQuery,
-  useRefreshTokenMutation,
+  useRefreshTokenMutation
 } = authApi;
